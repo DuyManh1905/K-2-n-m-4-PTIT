@@ -1,0 +1,26 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+<h5>Kết quả tìm kiếm cho: {{keyword}}</h5><br/>
+<div class="row" style="width: 100%;">
+    {% for product in products %}
+    <div class="col-lg-3 mb-4">
+        <div class="card">
+            <img class="card-img-top thumbnail" src="{{ product.image_url }}" alt="{{ product.name }}"/>
+            <div class="card-body">
+                <h6 class="card-title">{{ product.name }}</h6>
+                <hr class="my-3"/>
+                <div class="d-flex justify-content-between align-items-center">
+                    <a class="btn btn-outline-secondary add-btn"
+                       href="{% url 'addToCart' product_slug=product.slug %}">Add to Cart</a>
+                    <a class="btn btn-outline-success" href="#">See More</a>
+                </div>
+                <h4 class="card-text mt-3 text-right"><strong>{{ product.price|floatformat:2 }}$</strong></h4>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<br/>
+{% endblock %}

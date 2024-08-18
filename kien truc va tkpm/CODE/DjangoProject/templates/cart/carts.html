@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="mb-6 text-3xl">Carts</h1>
+{% load cart_tags %}
+<div class="space-y-6">
+    {% for cproduct in cart.cartproducts.all %}
+        <div class="p-6 flex bg-gray-100 rounded-xl">
+            <div class="pr-6">
+                <img src="{{ cproduct.product.image.url }}" class="w-20 rounded-xl">
+            </div>
+
+            <div>
+                <p class="text-2xl">{{ cproduct.product.name }}</p>
+                <p class="text-xl text-gray-500">Đơn giá {{ cproduct.product.price }} USD</p>
+                <p class="text-xl text-gray-500"> Số lượng: {{ cproduct.quantity }}</p>
+                <p class="text-xl text-indigo-500"> Thành tiền: {{ cproduct.product.price|mul:cproduct.quantity }} USD</p>
+            </div>
+        </div>
+    {% endfor %}
+
+    <p class="text-3xl text-green-700">Tổng tiền: {{ tongtien }} USD</p>
+</div>
+{% endblock content %}
+

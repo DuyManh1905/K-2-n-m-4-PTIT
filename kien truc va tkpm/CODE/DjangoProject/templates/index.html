@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+    <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
+        <h2 class="mb-12 text-2xl text-center">List Book</h2>
+
+        <div class="grid grid-cols-3 gap-3">
+            {% for product in products %}
+                <div>
+                    <a href="{% url 'product:detail' product.id %}">
+                        <div>
+                            <img src="{{ product.image.url }}" class="rounded-t-xl">
+                        </div>
+
+                        <div class="p-6 bg-white rounded-b-xl">
+                            <h2 class="text-2xl">{{ product.name }}</h2>
+                            <p class="text-gray-500">Price: {{ product.price }}</p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+        <h2 class="mb-12 text-2xl text-center">List Clothes</h2>
+
+        <div class="grid grid-cols-3 gap-3">
+            {% for cloth in clothes %}
+                <div>
+                    <a href="{% url 'clothes:detail' cloth.id %}">
+                        <div>
+                            <img src="{{ cloth.image.url }}" class="rounded-t-xl">
+                        </div>
+
+                        <div class="p-6 bg-white rounded-b-xl">
+                            <h2 class="text-2xl">{{ cloth.name }}</h2>
+                            <p class="text-gray-500">Price: {{ cloth.price }}</p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+        <h2 class="mb-12 text-2xl text-center">List Mobiles</h2>
+
+        <div class="grid grid-cols-3 gap-3">
+            {% for mobile in mobiles %}
+                <div>
+                    <a href="#">
+                        <div>
+                            <img src="{{ mobile.image.url }}" class="rounded-t-xl">
+                        </div>
+
+                        <div class="p-6 bg-white rounded-b-xl">
+                            <h2 class="text-2xl">{{ mobile.name }}</h2>
+                            <p class="text-gray-500">Price: {{ mobile.price }}</p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
+        <h2 class="mb-12 text-2xl text-center">Categories</h2>
+
+        <div class="grid grid-cols-3 gap-3">
+            {% for category in categories %}
+                <div>
+                    <a href="#">
+                        <div class="p-6 bg-white rounded-b-xl">
+                            <h2 class="text-2xl">{{ category.name }}</h2>
+                            <p class="text-gray-500">{{ category.products.count }} items</p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/icon_cat"
+        android:layout_gravity="center"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:layout_marginTop="5dp"/>
+    <TableLayout
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:stretchColumns="1">
+        <TableRow>
+            <TextView
+                android:text="Name  "
+                android:gravity="center"
+                android:textColor="@color/grayblue"
+                android:textSize="12dp"/>
+            <EditText
+                android:hint="enter name"
+                android:textSize="12dp"
+                android:backgroundTint="@color/grayblue"
+                android:id="@+id/editName"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Price "
+                android:gravity="center"
+                android:textColor="@color/grayblue"
+                android:textSize="12dp"/>
+            <EditText
+                android:hint="enter price"
+                android:textSize="12dp"
+                android:inputType="number"
+                android:backgroundTint="@color/grayblue"
+                android:id="@+id/editPrice"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Info  "
+                android:gravity="center"
+                android:textColor="@color/grayblue"
+                android:textSize="12dp"/>
+            <EditText
+                android:hint="enter info"
+                android:textSize="12dp"
+                android:backgroundTint="@color/grayblue"
+                android:id="@+id/editInfo"/>
+        </TableRow>
+    </TableLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="ADD"
+            android:textColor="@color/white"
+            android:id="@+id/btnAdd"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/tabbar"/>
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="UPDATE"
+            android:textColor="@color/white"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/btnUpdate"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/tabbar"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="List Cat"
+        android:textSize="20dp"
+        android:textColor="@color/orange"
+        android:layout_marginTop="10dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/reView"/>
+</LinearLayout>

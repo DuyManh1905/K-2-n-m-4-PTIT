@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.MainActivity">
+
+    <!--
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+    </android.support.design.widget.AppBarLayout>
+    -->
+
+    <com.androidbeaconedmuseum.DirectionView
+        android:id="@+id/direction_view"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center" />
+
+
+    <com.androidbeaconedmuseum.LocationView
+        android:id="@+id/location_board"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/next_scan_hint"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_gravity="top|right"
+        android:gravity="center"
+        android:text="@string/scan_hint_init"
+        android:textSize="18sp"
+        app:layout_anchor="@+id/location_board"
+        app:layout_anchorGravity="bottom|left" />
+
+</android.support.design.widget.CoordinatorLayout>

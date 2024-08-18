@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="*">
+
+    <TableRow android:layout_marginTop="50dp">
+        <TextView
+            android:layout_span="4"
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exaple for table"
+            android:background="@color/black"/>
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:text="BT1"
+            android:layout_column="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"/>
+        <Button
+            android:text="BT2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#cccccc"
+            />
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:text="BT3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:text="BT4"
+            android:layout_marginRight="10dp"
+            android:layout_column="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:text="BT5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </TableRow>
+
+</TableLayout>
